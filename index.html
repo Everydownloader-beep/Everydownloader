@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#080b14">
+<title>everydownloader — Video link helper</title>
+<style>
+:root{color-scheme:dark;--bg:#080b14;--panel:#111827;--muted:#9aa7bd;--line:#263248;--blue:#4e8cff;--pink:#d65cff}
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:radial-gradient(ellipse at 20% 0%,#172447 0,transparent 42%),radial-gradient(ellipse at 90% 15%,#32183d 0,transparent 34%),var(--bg);color:#f7f8fc;min-height:100vh}
+.wrap{width:min(1040px,92%);margin:auto}.nav{display:flex;justify-content:space-between;align-items:center;padding:22px 0}.brand{font-weight:850;font-size:1.35rem;letter-spacing:-.7px}.brand span{color:#79aaff}.pill{border:1px solid var(--line);border-radius:99px;padding:8px 13px;color:#c6d2e8;font-size:.85rem}
+.hero{text-align:center;padding:64px 0 38px}.eyebrow{color:#aabfff;font-size:.85rem;letter-spacing:2px;text-transform:uppercase}.hero h1{font-size:clamp(2.4rem,7vw,4.8rem);line-height:1.04;letter-spacing:-2px;margin:16px 0}.grad{background:linear-gradient(90deg,#74aaff,#d879ff);-webkit-background-clip:text;background-clip:text;color:transparent}.lead{color:var(--muted);max-width:650px;margin:0 auto;line-height:1.7}
+.panel{max-width:760px;margin:30px auto 0;background:#101727dd;border:1px solid #2a3650;border-radius:22px;padding:22px;box-shadow:0 24px 80px #0005;text-align:left}.tabs{display:flex;gap:10px;margin-bottom:17px}.tab{flex:1;border:1px solid var(--line);border-radius:12px;padding:12px;background:#0c1220;color:#c8d3e6;font-weight:700;cursor:pointer}.tab.active{background:#1a2c50;border-color:#5c91ff;color:white}.field{display:flex;gap:10px}.field input{flex:1;min-width:0;background:#080e1b;border:1px solid #34415b;border-radius:12px;padding:15px;color:white;font-size:1rem;outline:none}.field input:focus{border-color:#75a2ff}.primary{border:0;border-radius:12px;padding:14px 20px;background:linear-gradient(110deg,#4d8cff,#a35cff);color:white;font-weight:800;font-size:1rem;cursor:pointer}.hint{font-size:.83rem;color:var(--muted);line-height:1.6;margin:12px 2px 0}.notice{display:none;margin-top:15px;border:1px solid #385077;background:#0c1b31;padding:14px;border-radius:12px;color:#dce8ff;line-height:1.55}.notice.show{display:block}.notice a{color:#9dc2ff;overflow-wrap:anywhere}.features{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:55px 0}.feature,.step{background:#101727b8;border:1px solid var(--line);border-radius:16px;padding:20px}.feature h3{margin:8px 0}.feature p,.step p{color:var(--muted);line-height:1.6;font-size:.92rem;margin-bottom:0}.how h2{text-align:center;font-size:2rem}.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:25px 0 55px}.num{color:#91b7ff;font-weight:900;font-size:1.2rem}footer{border-top:1px solid var(--line);padding:25px 0 35px;color:var(--muted);font-size:.85rem;line-height:1.6}.small{font-size:.8rem}
+@media(max-width:650px){.hero{padding-top:42px}.panel{padding:15px}.field{flex-direction:column}.features,.steps{grid-template-columns:1fr}.features{margin:35px 0}.hero h1{letter-spacing:-1.2px}.nav{padding:16px 0}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="nav"><div class="brand">every<span>downloader</span></div><div class="pill">Video link helper</div></header>
+<main>
+<section class="hero">
+<div class="eyebrow">Simple • Fast • Mobile-friendly</div>
+<h1>Save the videos<br><span class="grad">you’re allowed to keep.</span></h1>
+<p class="lead">A clean place to work with your video links. Paste a YouTube or Instagram Reel URL to open it, or use the link with a download method officially provided by its platform or creator.</p>
+<div class="panel">
+<div class="tabs" role="tablist" aria-label="Choose platform">
+<button class="tab active" id="ytTab" type="button" aria-pressed="true">▶ YouTube</button>
+<button class="tab" id="igTab" type="button" aria-pressed="false">◎ Instagram Reels</button>
+</div>
+<form id="linkForm">
+<div class="field"><input id="videoUrl" type="url" placeholder="Paste a video URL here…" aria-label="Video URL" required><button class="primary" type="submit">Continue ↗</button></div>
+</form>
+<p class="hint">This starter site does not fetch or download video files. It validates the link and opens the original platform. Download only content you own or have permission to save, using authorized methods.</p>
+<div class="notice" id="notice" role="status" aria-live="polite"></div>
+</div>
+</section>
+<section class="features" aria-label="Features">
+<article class="feature"><div>⚡</div><h3>Quick link handling</h3><p>Paste a link and open the original video without extra steps.</p></article>
+<article class="feature"><div>📱</div><h3>Made for mobile</h3><p>Responsive layout designed to work on phones, tablets, and desktops.</p></article>
+<article class="feature"><div>🔒</div><h3>Privacy-conscious</h3><p>This static page does not upload your pasted URL to a server.</p></article>
+</section>
+<section class="how"><h2>How it works</h2><div class="steps">
+<article class="step"><div class="num">01</div><h3>Copy a link</h3><p>Copy the video URL from YouTube or Instagram.</p></article>
+<article class="step"><div class="num">02</div><h3>Paste it here</h3><p>Choose the matching platform and paste the link.</p></article>
+<article class="step"><div class="num">03</div><h3>Continue safely</h3><p>Open the source video and use an authorized download option, if available.</p></article>
+</div></section>
+</main>
+<footer><strong>everydownloader</strong><br>This is an independent link-helper demo, not affiliated with YouTube or Instagram. Respect copyright, platform terms, and creators’ permissions.<div class="small">© <span id="year"></span> everydownloader</div></footer>
+</div>
+<script>
+const ytTab=document.getElementById('ytTab'),igTab=document.getElementById('igTab'),input=document.getElementById('videoUrl'),notice=document.getElementById('notice');
+let platform='youtube';
+function choose(p){platform=p;ytTab.classList.toggle('active',p==='youtube');igTab.classList.toggle('active',p==='instagram');ytTab.setAttribute('aria-pressed',String(p==='youtube'));igTab.setAttribute('aria-pressed',String(p==='instagram'));input.placeholder=p==='youtube'?'Paste a YouTube video URL…':'Paste an Instagram Reel URL…';notice.className='notice';notice.textContent='';}
+ytTab.addEventListener('click',()=>choose('youtube'));igTab.addEventListener('click',()=>choose('instagram'));
+document.getElementById('linkForm').addEventListener('submit',e=>{e.preventDefault();let u;try{u=new URL(input.value.trim())}catch{notice.className='notice show';notice.textContent='Please enter a valid full URL, starting with https://';return}
+const host=u.hostname.toLowerCase().replace(/^www\./,'');const ok=platform==='youtube'?['youtube.com','m.youtube.com','youtu.be','music.youtube.com'].includes(host):['instagram.com','m.instagram.com'].includes(host);
+if(!ok){notice.className='notice show';notice.textContent=platform==='youtube'?'That does not look like a YouTube URL. Choose Instagram Reels if that is the link you have.':'That does not look like an Instagram URL. Choose YouTube if that is the link you have.';return}
+notice.className='notice show';notice.innerHTML='Link looks valid. Opening the original video: <br><a href="'+u.href.replace(/&/g,'&amp;').replace(/"/g,'&quot;')+'" target="_blank" rel="noopener noreferrer">Open video in a new tab ↗</a><br><span class="small">For downloads, use platform-provided options and only save content you have permission to download.</span>';
+});
+document.getElementById('year').textContent=new Date().getFullYear();
+</script>
+</body></html>
